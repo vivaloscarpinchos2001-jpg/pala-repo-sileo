@@ -1,13 +1,9 @@
 ```css
-/* ==================================================
+/* =========================================
    PALA'S REPOSITORY
-   Windows Vista / Aero / BSD Retro Style
-================================================== */
+   Minimal BSD-inspired design
+========================================= */
 
-
-/* ==================================================
-   RESET
-================================================== */
 
 * {
     box-sizing: border-box;
@@ -23,60 +19,68 @@ body {
 
     margin: 0;
 
-    min-height: 100vh;
+    background: #f5f5f3;
+
+    color: #202522;
 
     font-family:
+        -apple-system,
+        BlinkMacSystemFont,
         "Segoe UI",
-        Tahoma,
+        Helvetica,
         Arial,
         sans-serif;
 
-    color: #18394d;
+    font-size: 15px;
 
-
-    /*
-        WALLPAPER
-
-        Put your image here:
-
-        assets/wallpaper.jpg
-    */
-
-    background-image:
-
-        linear-gradient(
-            rgba(0, 40, 80, 0.08),
-            rgba(0, 120, 100, 0.08)
-        ),
-
-        url("assets/wallpaper.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-attachment: fixed;
-
-    background-color: #58b8df;
+    line-height: 1.6;
 
 }
 
 
-/* ==================================================
-   TOP AERO BAR
-================================================== */
+/* =========================================
+   GLOBAL
+========================================= */
 
-.topbar {
+.container {
 
-    height: 62px;
+    width:
+        min(
+            940px,
+            calc(100% - 40px)
+        );
 
-    width: 100%;
+    margin:
+        0 auto;
 
-    position: sticky;
+}
 
-    top: 0;
 
-    z-index: 100;
+a {
+
+    color: inherit;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    border-bottom:
+        1px solid #d9d9d6;
+
+    background:
+        #fafaf8;
+
+}
+
+
+.header-inner {
+
+    height: 66px;
 
     display: flex;
 
@@ -84,543 +88,153 @@ body {
 
     justify-content: space-between;
 
-    padding:
-        0 28px;
-
-
-    background:
-
-        linear-gradient(
-            rgba(255,255,255,0.88),
-            rgba(210,239,248,0.75)
-        );
-
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.95);
-
-
-    box-shadow:
-
-        0 3px 18px
-        rgba(0,50,80,0.32);
-
-
-    backdrop-filter:
-        blur(14px);
-
 }
 
 
+.logo {
 
-/* ==================================================
-   BRAND
-================================================== */
-
-.brand {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-}
-
-
-.brand-orb {
-
-    width: 37px;
-
-    height: 37px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 50%;
-
-
-    color: white;
-
-    font-size: 19px;
-
-
-    background:
-
-        radial-gradient(
-            circle at 30% 25%,
-            #ffffff,
-            #b9f5ff 18%,
-            #53c7e9 45%,
-            #167bb6 75%,
-            #075382
-        );
-
-
-    border:
-        1px solid white;
-
-
-    box-shadow:
-
-        0 2px 8px
-        rgba(0,70,110,0.35),
-
-        inset 0 1px 3px
-        rgba(255,255,255,0.9);
-
-}
-
-
-.brand-title {
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    color: #174d68;
-
-}
-
-
-.brand-subtitle {
-
-    margin-top: 2px;
-
-    font-size: 10px;
-
-    color: #668594;
-
-}
-
-
-
-/* ==================================================
-   NAVIGATION
-================================================== */
-
-nav {
-
-    display: flex;
-
-    gap: 5px;
-
-}
-
-
-nav a {
-
-    padding:
-        7px 13px;
-
-    border-radius: 7px;
-
-    color: #28556b;
+    color: #202522;
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 15px;
 
-    border:
-        1px solid
-        transparent;
+    font-weight: 650;
 
-}
-
-
-nav a:hover {
-
-    color: #103b54;
-
-    border-color:
-        rgba(255,255,255,0.9);
-
-    background:
-        rgba(255,255,255,0.45);
-
-    box-shadow:
-        inset 0 1px white;
+    letter-spacing: -0.2px;
 
 }
 
 
-
-/* ==================================================
-   MAIN WINDOW
-================================================== */
-
-.window {
-
-    width:
-        min(
-            1080px,
-            calc(100% - 32px)
-        );
-
-    margin:
-        45px auto 70px;
-
-    overflow: hidden;
-
-    border-radius: 10px;
-
-
-    background:
-
-        linear-gradient(
-            rgba(255,255,255,0.94),
-            rgba(229,244,249,0.95)
-        );
-
-
-    border:
-        1px solid
-        rgba(255,255,255,0.95);
-
-
-    box-shadow:
-
-        0 25px 70px
-        rgba(0,45,70,0.48),
-
-        0 0 0 1px
-        rgba(20,70,90,0.25);
-
-
-    backdrop-filter:
-        blur(18px);
-
-}
-
-
-
-/* ==================================================
-   WINDOW TITLEBAR
-================================================== */
-
-.titlebar {
-
-    height: 38px;
-
-    position: relative;
+.nav {
 
     display: flex;
 
-    align-items: center;
-
-    justify-content: center;
-
-
-    background:
-
-        linear-gradient(
-            #f9fdff,
-            #dcecf2 45%,
-            #b9d2dc 50%,
-            #e8f4f8 57%,
-            #ffffff
-        );
-
-
-    border-bottom:
-        1px solid
-        #9db8c3;
-
-
-    color: #365564;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-
-    text-shadow:
-        0 1px white;
+    gap: 28px;
 
 }
 
 
-.window-controls {
+.nav a {
 
-    position: absolute;
+    color: #69716d;
 
-    left: 12px;
+    text-decoration: none;
 
-    display: flex;
-
-    gap: 6px;
+    font-size: 13px;
 
 }
 
 
-.control {
+.nav a:hover {
 
-    width: 13px;
-
-    height: 13px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(0,0,0,0.35);
-
-    box-shadow:
-
-        inset 0 1px
-        rgba(255,255,255,0.9),
-
-        0 1px
-        rgba(255,255,255,0.5);
-
-}
-
-
-.close {
-
-    background:
-        linear-gradient(
-            #ff9d98,
-            #d9322c
-        );
-
-}
-
-
-.minimize {
-
-    background:
-        linear-gradient(
-            #fff19b,
-            #d8a700
-        );
-
-}
-
-
-.maximize {
-
-    background:
-        linear-gradient(
-            #a8f2a0,
-            #40a83b
-        );
-
-}
-
-
-.window-right {
-
-    position: absolute;
-
-    right: 15px;
-
-    color: #4c9eae;
+    color: #202522;
 
 }
 
 
 
-/* ==================================================
+/* =========================================
    HERO
-================================================== */
+========================================= */
 
 .hero {
 
-    min-height: 440px;
-
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns:
-        1.15fr 0.85fr;
-
-    overflow: hidden;
-
-
-    padding:
-        68px 70px;
-
-
-    background:
-
-        linear-gradient(
-            115deg,
-            rgba(255,255,255,0.97),
-            rgba(221,247,252,0.88)
-        );
+    border-bottom:
+        1px solid #dededb;
 
 }
 
 
-.hero::after {
+.hero-inner {
 
-    content: "";
+    min-height: 430px;
 
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-
-    height: 70px;
-
-
-    background:
-
-        linear-gradient(
-            transparent,
-            rgba(92,205,184,0.12)
-        );
-
-    pointer-events: none;
-
-}
-
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 3;
-
-}
-
-
-
-/* ==================================================
-   HERO LABEL
-================================================== */
-
-.aero-label {
-
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
 
-    gap: 7px;
-
-    padding:
-        5px 10px;
+}
 
 
-    color: white;
+.hero-copy {
 
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.7px;
-
-
-    border-radius: 10px;
-
-
-    background:
-
-        linear-gradient(
-            #7de6ee,
-            #249bb7 48%,
-            #16758f 52%
-        );
-
-
-    border:
-        1px solid white;
-
-
-    box-shadow:
-
-        0 2px 7px
-        rgba(30,100,120,0.32),
-
-        inset 0 1px white;
+    max-width: 650px;
 
 }
 
 
-.aero-label span {
+.eyebrow {
 
-    width: 6px;
+    margin: 0 0 13px;
 
-    height: 6px;
+    color: #6b756f;
 
-    border-radius: 50%;
+    font-size: 10px;
 
-    background: #aaffb2;
+    font-weight: 700;
 
-    box-shadow:
-        0 0 5px #aaffb2;
+    letter-spacing: 1.7px;
 
 }
 
-
-
-/* ==================================================
-   HERO TEXT
-================================================== */
 
 .hero h1 {
 
-    margin:
-        18px 0 4px;
+    margin: 0;
+
+    color: #171b19;
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    font-size: 49px;
-
-    line-height: 1.05;
-
-    color: #1a526d;
-
-    text-shadow:
-        0 1px white;
-
-}
-
-
-.hero h2 {
-
-    margin:
-        0 0 21px;
-
-    font-size: 23px;
+    font-size:
+        clamp(42px, 7vw, 68px);
 
     font-weight: 400;
 
-    color: #4c7889;
+    letter-spacing: -2.5px;
+
+    line-height: 1.05;
 
 }
 
 
-.hero p {
-
-    max-width: 600px;
+.tagline {
 
     margin:
-        0 0 12px;
+        12px 0 18px;
 
-    color: #557583;
+    color: #4e5853;
 
-    font-size: 14px;
+    font-size: 21px;
 
-    line-height: 1.7;
+    font-weight: 400;
+
+}
+
+
+.description {
+
+    max-width: 520px;
+
+    margin: 0;
+
+    color: #68716d;
+
+    font-size: 15px;
+
+    line-height: 1.75;
 
 }
 
 
 
-/* ==================================================
+/* =========================================
    SILEO BUTTON
-================================================== */
+========================================= */
 
 .sileo-button {
 
@@ -630,846 +244,253 @@ nav a:hover {
 
     gap: 9px;
 
-    margin-top: 14px;
+    margin-top: 27px;
 
     padding:
-        11px 18px;
+        10px 16px;
 
 
-    color: white;
+    background: #222725;
+
+    color: #ffffff;
+
+    border:
+        1px solid #222725;
+
+    border-radius: 5px;
+
 
     text-decoration: none;
 
     font-size: 13px;
 
-    font-weight: 700;
-
-
-    border-radius: 15px;
-
-
-    background:
-
-        linear-gradient(
-            #b7f7ff 0%,
-            #4bd2e7 20%,
-            #168fb8 50%,
-            #09688e 52%,
-            #25a2c5 100%
-        );
-
-
-    border:
-        1px solid white;
+    font-weight: 600;
 
 
     box-shadow:
-
-        0 3px 9px
-        rgba(0,75,100,0.40),
-
-        inset 0 1px
-        rgba(255,255,255,0.95);
-
-
-    text-shadow:
         0 1px 2px
-        rgba(0,50,70,0.7);
+        rgba(0,0,0,0.08);
 
 
     transition:
-        transform .15s ease,
-        filter .15s ease;
+        background .15s ease,
+        transform .15s ease;
 
 }
 
 
 .sileo-button:hover {
 
-    transform:
-        translateY(-2px);
+    background: #3b433f;
 
-    filter:
-        brightness(1.08);
+    transform:
+        translateY(-1px);
 
 }
 
 
-.sileo-icon {
+.sileo-symbol {
 
-    width: 21px;
+    width: 17px;
 
-    height: 21px;
+    height: 17px;
 
     display: grid;
 
     place-items: center;
 
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,0.22);
-
     border:
         1px solid
-        rgba(255,255,255,0.65);
+        rgba(255,255,255,0.45);
 
-    font-size: 17px;
+    border-radius: 3px;
 
-}
+    font-size: 14px;
 
-
-
-/* ==================================================
-   REPOSITORY STATUS
-================================================== */
-
-.repo-info {
-
-    margin-top: 13px;
-
-    color: #78929e;
-
-    font-size: 10px;
-
-}
-
-
-.status-dot {
-
-    display: inline-block;
-
-    width: 7px;
-
-    height: 7px;
-
-    margin-right: 5px;
-
-    border-radius: 50%;
-
-    background: #45bd55;
-
-    box-shadow:
-        0 0 6px
-        rgba(50,190,70,0.7);
-
-}
-
-
-.separator {
-
-    margin:
-        0 5px;
-
-    color: #a4b8bf;
+    line-height: 1;
 
 }
 
 
 
-/* ==================================================
-   HERO AERO ART
-================================================== */
-
-.hero-art {
-
-    position: relative;
-
-    min-height: 300px;
-
-}
-
-
-.orb {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    border:
-        2px solid
-        rgba(255,255,255,0.85);
-
-
-    box-shadow:
-
-        inset -18px -25px 35px
-        rgba(0,40,80,0.24),
-
-        inset 13px 10px 25px
-        rgba(255,255,255,0.52),
-
-        0 12px 35px
-        rgba(0,70,100,0.25);
-
-}
-
-
-.orb::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 25%;
-
-    height: 15%;
-
-    left: 22%;
-
-    top: 16%;
-
-    border-radius: 50%;
-
-    background: white;
-
-    opacity: .75;
-
-    filter:
-        blur(3px);
-
-}
-
-
-/* GREEN */
-
-.orb-green {
-
-    width: 145px;
-
-    height: 145px;
-
-    right: 35px;
-
-    top: 15px;
-
-
-    background:
-
-        radial-gradient(
-            circle at 30% 25%,
-            #f4ffff,
-            #9dffc5 18%,
-            #35d47c 48%,
-            #129b59 75%,
-            #086a40
-        );
-
-}
-
-
-/* BLUE */
-
-.orb-blue {
-
-    width: 205px;
-
-    height: 205px;
-
-    right: 95px;
-
-    bottom: 0;
-
-
-    background:
-
-        radial-gradient(
-            circle at 30% 25%,
-            #ffffff,
-            #aaf4ff 17%,
-            #48c7ef 45%,
-            #167db8 76%,
-            #07547f
-        );
-
-}
-
-
-/* RED */
-
-.orb-red {
-
-    width: 75px;
-
-    height: 75px;
-
-    left: 10px;
-
-    bottom: 35px;
-
-
-    background:
-
-        radial-gradient(
-            circle at 30% 25%,
-            #ffffff,
-            #ffb7ae 18%,
-            #ef554c 48%,
-            #bb272d 78%,
-            #7e151d
-        );
-
-}
-
-
-/* PURPLE */
-
-.orb-purple {
-
-    width: 50px;
-
-    height: 50px;
-
-    right: 0;
-
-    bottom: 55px;
-
-
-    background:
-
-        radial-gradient(
-            circle at 30% 25%,
-            #ffffff,
-            #e3bfff 18%,
-            #a85ce9 48%,
-            #6c2ab0 78%
-        );
-
-}
-
-
-.aero-star {
-
-    position: absolute;
-
-    right: 138px;
-
-    top: 86px;
-
-    z-index: 4;
-
-    color: white;
-
-    font-size: 58px;
-
-    opacity: .7;
-
-    text-shadow:
-        0 0 16px white;
-
-}
-
-
-.aero-glow {
-
-    position: absolute;
-
-    width: 240px;
-
-    height: 240px;
-
-    right: 20px;
-
-    top: 45px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(120,240,210,0.15);
-
-    filter:
-        blur(35px);
-
-}
-
-
-
-/* ==================================================
-   TWEAK SECTION
-================================================== */
-
-.tweaks {
+/* =========================================
+   PROJECTS
+========================================= */
+
+.projects {
 
     padding:
-        50px 65px;
-
+        95px 0;
 
     background:
-
-        linear-gradient(
-            rgba(248,253,255,0.97),
-            rgba(228,245,249,0.96)
-        );
+        #ffffff;
 
 }
 
 
-.section-heading {
+.section-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-header h2 {
+
+    margin: 0;
+
+    color: #202522;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 34px;
+
+    font-weight: 400;
+
+    letter-spacing: -1px;
+
+}
+
+
+
+/* =========================================
+   PROJECT
+========================================= */
+
+.project {
+
+    display: grid;
+
+    grid-template-columns:
+        65px 1fr;
+
+    gap: 20px;
+
+    padding:
+        28px 0;
+
+
+    border-top:
+        1px solid #dedfdb;
+
+}
+
+
+.project:last-child {
+
+    border-bottom:
+        1px solid #dedfdb;
+
+}
+
+
+.project-number {
+
+    padding-top: 3px;
+
+    color: #9aa19d;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 11px;
+
+}
+
+
+.project-info {
+
+    min-width: 0;
+
+}
+
+
+.project-title-row {
 
     display: flex;
 
     align-items: center;
 
-    justify-content: space-between;
-
-    margin-bottom: 22px;
-
-    padding-bottom: 14px;
-
-    border-bottom:
-        1px solid
-        #aac4cf;
-
-}
-
-
-.section-kicker {
-
-    margin-bottom: 4px;
-
-    color: #4a9a91;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-}
-
-
-.section-heading h2 {
-
-    margin: 0;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 29px;
-
-    color: #21566f;
-
-}
-
-
-.section-heading p {
-
-    margin:
-        5px 0 0;
-
-    color: #718994;
-
-    font-size: 12px;
-
-}
-
-
-.section-badge {
-
-    width: 42px;
-
-    height: 42px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 12px;
-
-    color: white;
-
-    font-size: 20px;
-
-
-    background:
-
-        linear-gradient(
-            #ffb0aa,
-            #dc4a4c 50%,
-            #a7212b
-        );
-
-
-    border:
-        1px solid white;
-
-
-    box-shadow:
-
-        0 3px 8px
-        rgba(130,40,50,0.28),
-
-        inset 0 1px white;
-
-}
-
-
-
-/* ==================================================
-   TWEAK CARD
-================================================== */
-
-.tweak {
-
-    display: flex;
-
-    gap: 17px;
-
-    padding:
-        18px;
-
-    margin-bottom: 13px;
-
-
-    border-radius: 10px;
-
-
-    background:
-
-        linear-gradient(
-            rgba(255,255,255,0.86),
-            rgba(237,247,250,0.75)
-        );
-
-
-    border:
-        1px solid
-        rgba(255,255,255,0.95);
-
-
-    box-shadow:
-
-        0 2px 7px
-        rgba(40,80,100,0.13),
-
-        inset 0 1px
-        white;
-
-
-    transition:
-        transform .15s ease,
-        box-shadow .15s ease;
-
-}
-
-
-.tweak:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-
-        0 7px 18px
-        rgba(40,80,100,0.18),
-
-        inset 0 1px white;
-
-}
-
-
-
-/* ==================================================
-   TWEAK ICONS
-================================================== */
-
-.tweak-icon {
-
-    flex-shrink: 0;
-
-    width: 57px;
-
-    height: 57px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 14px;
-
-    color: white;
-
-    font-size: 24px;
-
-    font-weight: 700;
-
-    border:
-        1px solid white;
-
-    box-shadow:
-
-        0 3px 8px
-        rgba(30,80,100,0.25),
-
-        inset 0 1px white;
-
-}
-
-
-/* Blursearch */
-
-.blursearch-icon {
-
-    background:
-
-        linear-gradient(
-            #a4f7ff,
-            #38c4dd 50%,
-            #15849e
-        );
-
-}
-
-
-/* Liquidsearch */
-
-.liquid-icon {
-
-    background:
-
-        linear-gradient(
-            #d7b5ff,
-            #9a55e1 50%,
-            #6126a5
-        );
-
-}
-
-
-/* Home18 */
-
-.home-icon {
-
-    background:
-
-        linear-gradient(
-            #b9ffc5,
-            #47bd65 50%,
-            #19843d
-        );
-
-}
-
-
-
-/* ==================================================
-   TWEAK CONTENT
-================================================== */
-
-.tweak-content {
-
-    flex: 1;
-
-}
-
-
-.tweak-top {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    justify-content: space-between;
-
-    gap: 15px;
-
-}
-
-
-.tweak h3 {
-
-    margin: 0;
-
-    color: #255a72;
-
-    font-size: 17px;
-
-}
-
-
-.version {
-
-    display: block;
-
-    margin-top: 3px;
-
-    color: #8298a2;
-
-    font-size: 10px;
-
-}
-
-
-.tweak p {
-
-    margin:
-        10px 0;
-
-    color: #617b87;
-
-    font-size: 12px;
-
-    line-height: 1.6;
-
-}
-
-
-
-/* ==================================================
-   STATUS BADGES
-================================================== */
-
-.status {
-
-    padding:
-        4px 9px;
-
-    border-radius: 9px;
-
-    color: white;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    border:
-        1px solid white;
-
-    box-shadow:
-        inset 0 1px white;
-
-}
-
-
-.green-status {
-
-    background:
-        linear-gradient(
-            #a6efad,
-            #40a84e
-        );
-
-}
-
-
-.blue-status {
-
-    background:
-        linear-gradient(
-            #9ceaff,
-            #268ec5
-        );
-
-}
-
-
-.orange-status {
-
-    background:
-        linear-gradient(
-            #ffd393,
-            #d97823
-        );
-
-}
-
-
-
-/* ==================================================
-   TAGS
-================================================== */
-
-.tags {
-
-    display: flex;
+    gap: 12px;
 
     flex-wrap: wrap;
 
-    gap: 5px;
+}
+
+
+.project h3 {
+
+    margin: 0;
+
+    color: #202522;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.3px;
 
 }
 
 
-.tags span {
+.project-status {
 
     padding:
-        4px 8px;
+        2px 7px;
 
-    border-radius: 7px;
+    border:
+        1px solid #cbd8cf;
 
-    color: #54727f;
+    border-radius: 3px;
+
+    background: #f2f7f3;
+
+    color: #53715d;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
 
     font-size: 9px;
 
-    background:
-        rgba(255,255,255,0.75);
+    text-transform: uppercase;
 
-    border:
-        1px solid
-        #d3e4e9;
+    letter-spacing: .4px;
 
 }
 
 
+.project-status.development {
 
-/* ==================================================
-   ABOUT
-================================================== */
+    border-color: #ddd4bd;
 
-.about {
+    background: #faf7ef;
 
-    display: flex;
-
-    justify-content:
-        space-between;
-
-    gap: 55px;
-
-    padding:
-        52px 65px;
-
-
-    background:
-
-        linear-gradient(
-            rgba(223,247,239,0.95),
-            rgba(208,233,241,0.96)
-        );
-
-
-    border-top:
-        1px solid white;
+    color: #806d42;
 
 }
 
 
-.about-content {
+.project p {
 
     max-width: 650px;
 
-}
-
-
-.about h2 {
-
     margin:
-        5px 0 14px;
+        8px 0 14px;
 
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 29px;
-
-    color: #255c70;
-
-}
-
-
-.about p {
-
-    color: #607b83;
+    color: #69736e;
 
     font-size: 13px;
 
@@ -1478,135 +499,33 @@ nav a:hover {
 }
 
 
-
-/* ==================================================
-   ABOUT PANEL
-================================================== */
-
-.about-panel {
-
-    min-width: 245px;
+.project-meta {
 
     display: flex;
 
-    flex-direction: column;
+    gap: 7px;
 
-    gap: 8px;
+    flex-wrap: wrap;
 
 }
 
 
-.about-item {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 11px;
+.project-meta span {
 
     padding:
-        9px;
-
-
-    border-radius: 9px;
-
-
-    background:
-        rgba(255,255,255,0.60);
-
+        3px 7px;
 
     border:
-        1px solid white;
+        1px solid #dedfdb;
 
+    border-radius: 3px;
 
-    box-shadow:
+    color: #7b8580;
 
-        0 2px 5px
-        rgba(50,100,110,0.12),
-
-        inset 0 1px white;
-
-}
-
-
-.about-symbol {
-
-    width: 37px;
-
-    height: 37px;
-
-    display: grid;
-
-    place-items: center;
-
-    flex-shrink: 0;
-
-    border-radius: 9px;
-
-    color: white;
-
-    font-size: 17px;
-
-    border:
-        1px solid white;
-
-    box-shadow:
-        inset 0 1px white;
-
-}
-
-
-.apple-symbol {
-
-    background:
-        linear-gradient(
-            #a8efff,
-            #278dc0
-        );
-
-}
-
-
-.green-symbol {
-
-    background:
-        linear-gradient(
-            #b6f7bd,
-            #39a955
-        );
-
-}
-
-
-.red-symbol {
-
-    background:
-        linear-gradient(
-            #ffb5ae,
-            #d43f45
-        );
-
-}
-
-
-.about-item strong {
-
-    display: block;
-
-    color: #315f70;
-
-    font-size: 12px;
-
-}
-
-
-.about-item span {
-
-    display: block;
-
-    margin-top: 2px;
-
-    color: #81959c;
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
 
     font-size: 9px;
 
@@ -1614,11 +533,93 @@ nav a:hover {
 
 
 
-/* ==================================================
-   FOOTER
-================================================== */
+/* =========================================
+   ABOUT
+========================================= */
 
-footer {
+.about {
+
+    padding:
+        95px 0;
+
+    background:
+        #f5f5f3;
+
+    border-bottom:
+        1px solid #dededb;
+
+}
+
+
+.about-inner {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+}
+
+
+.about h2 {
+
+    margin: 0;
+
+    color: #202522;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 34px;
+
+    font-weight: 400;
+
+    letter-spacing: -1px;
+
+}
+
+
+.about-text {
+
+    max-width: 500px;
+
+}
+
+
+.about-text p {
+
+    margin:
+        0 0 16px;
+
+    color: #69736e;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    background:
+        #ffffff;
+
+}
+
+
+.footer-inner {
+
+    min-height: 65px;
 
     display: flex;
 
@@ -1626,267 +627,117 @@ footer {
 
     justify-content: space-between;
 
-    padding:
-        16px 25px;
+    color: #8a918d;
 
-
-    background:
-
-        linear-gradient(
-            #eef5f7,
-            #c9d7dc
-        );
-
-
-    border-top:
-        1px solid white;
-
-
-    color: #687d86;
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
 
     font-size: 10px;
 
 }
 
 
-footer strong {
 
-    margin-right: 7px;
-
-    color: #4a6875;
-
-}
-
-
-.footer-right {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-}
-
-
-.footer-orb {
-
-    width: 7px;
-
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: #48b65a;
-
-    box-shadow:
-        0 0 5px #48b65a;
-
-}
-
-
-
-/* ==================================================
-   BACKGROUND BUBBLES
-================================================== */
-
-.background-bubble {
-
-    position: fixed;
-
-    z-index: -1;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    filter:
-        blur(1px);
-
-}
-
-
-.bubble-one {
-
-    width: 190px;
-
-    height: 190px;
-
-    left: -80px;
-
-    top: 25%;
-
-
-    background:
-        rgba(88,235,155,0.25);
-
-}
-
-
-.bubble-two {
-
-    width: 150px;
-
-    height: 150px;
-
-    right: -60px;
-
-    top: 45%;
-
-
-    background:
-        rgba(240,80,100,0.22);
-
-}
-
-
-.bubble-three {
-
-    width: 110px;
-
-    height: 110px;
-
-    right: 12%;
-
-    top: 12%;
-
-
-    background:
-        rgba(165,80,235,0.20);
-
-}
-
-
-
-/* ==================================================
+/* =========================================
    MOBILE
-================================================== */
+========================================= */
 
-@media (max-width: 760px) {
-
-
-    .topbar {
-
-        padding:
-            0 14px;
-
-    }
+@media (max-width: 650px) {
 
 
-    .brand-subtitle {
-
-        display: none;
-
-    }
-
-
-    nav {
-
-        display: none;
-
-    }
-
-
-    .window {
+    .container {
 
         width:
-            calc(100% - 16px);
-
-        margin:
-            20px auto 40px;
+            calc(100% - 30px);
 
     }
 
 
-    .hero {
+    .header-inner {
 
-        grid-template-columns: 1fr;
-
-        padding:
-            45px 28px;
+        height: 58px;
 
     }
 
 
-    .hero-art {
+    .nav {
 
-        display: none;
+        gap: 14px;
+
+    }
+
+
+    .nav a {
+
+        font-size: 11px;
+
+    }
+
+
+    .hero-inner {
+
+        min-height: 380px;
 
     }
 
 
     .hero h1 {
 
-        font-size: 38px;
+        font-size: 43px;
+
+        letter-spacing:
+            -1.8px;
 
     }
 
 
-    .hero h2 {
+    .tagline {
 
-        font-size: 20px;
+        font-size: 19px;
 
     }
 
 
-    .tweaks {
+    .projects {
 
         padding:
-            40px 25px;
+            65px 0;
 
     }
 
 
-    .tweak {
+    .project {
 
-        padding:
-            14px;
+        grid-template-columns:
+            38px 1fr;
 
-    }
-
-
-    .tweak-top {
-
-        align-items:
-            flex-start;
-
-    }
-
-
-    .status {
-
-        display: none;
+        gap: 12px;
 
     }
 
 
     .about {
 
-        flex-direction:
-            column;
-
         padding:
-            40px 25px;
+            65px 0;
 
     }
 
 
-    .about-panel {
+    .about-inner {
 
-        min-width: 0;
+        grid-template-columns: 1fr;
+
+        gap: 30px;
 
     }
 
 
-    footer {
+    .footer-inner {
 
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
-
-        gap: 8px;
+        min-height: 55px;
 
     }
 
